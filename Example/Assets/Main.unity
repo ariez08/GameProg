@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 14418699}
   - component: {fileID: 14418702}
   - component: {fileID: 14418703}
+  - component: {fileID: 14418704}
   m_Layer: 9
   m_Name: UpperArmL
   m_TagString: Untagged
@@ -314,8 +315,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.8
+  m_UseAutoMass: 1
+  m_Mass: 0.20000002
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -347,6 +348,20 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 210
+--- !u!114 &14418704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 14418698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46467727bdd12a64196bb3b0f401039a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restingAngle: 0
+  force: 2
+  rb: {fileID: 14418702}
 --- !u!1 &227391114
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,8 +754,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747036944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9, y: -1.03, z: 0}
-  m_LocalScale: {x: 4, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0.01, y: -0.99, z: 0}
+  m_LocalScale: {x: 0.6683476, y: -0.06324671, z: 1}
   m_Children: []
   m_Father: {fileID: 348861926}
   m_RootOrder: 0
@@ -1384,7 +1399,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 976580412}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 10.27, y: -1.59, z: 0}
+  m_LocalPosition: {x: 10.35, y: -1.51, z: 0}
   m_LocalScale: {x: 23.310276, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1402,6 +1417,7 @@ GameObject:
   - component: {fileID: 1048399692}
   - component: {fileID: 1048399695}
   - component: {fileID: 1048399696}
+  - component: {fileID: 1048399697}
   m_Layer: 9
   m_Name: UpperArmR
   m_TagString: Untagged
@@ -1498,8 +1514,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.20000002
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -1531,6 +1547,20 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: -210
+--- !u!114 &1048399697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048399691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46467727bdd12a64196bb3b0f401039a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restingAngle: 0
+  force: 2
+  rb: {fileID: 1048399695}
 --- !u!1 &1065132718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,17 +1855,17 @@ MonoBehaviour:
   lowerArmL: {fileID: 770979741}
   rb: {fileID: 348861927}
   jumpForce: 50
-  seconds: 0
+  jumps: 2
   anim: {fileID: 1344884377}
   isOnGround: 0
-  positionRadius: 0.3
   ground:
     serializedVersion: 2
     m_Bits: 256
+  positionRadius: 0.3
   playerPos: {fileID: 747036945}
-  jumps: 2
   speed: 2
-  stepWait: 10
+  stepWait: 2
+  jumpsF: 2
   jumpForceF: 40
 --- !u!95 &1344884377
 Animator:

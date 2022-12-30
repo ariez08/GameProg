@@ -9,17 +9,19 @@ var lowerArmL : Rigidbody2D;
 var rb : Rigidbody2D;
 
 var jumpForce : float;
-var seconds : float;
+var jumps : int;
 var anim : Animator;
 var isOnGround : boolean;
-var positionRadius : float;
 var ground : LayerMask;
+var positionRadius : float;
 var playerPos : Transform;
-var jumps = 2;
+
 @SerializeField
 var speed : float = 1.5f;
 @SerializeField
 var stepWait : float = .5f;
+@SerializeField
+var jumpsF : int = 2;
 @SerializeField
 var jumpForceF : float = 40;
 
@@ -55,7 +57,7 @@ function Update () {
 		anim.Play("idle");
 	}
 
-	//Ataack
+	//Attack
 	if (Input.GetKeyDown(KeyCode.Q))
 	{
 		lowerArmL.AddForce(transform.right * -1000);
@@ -68,12 +70,12 @@ function Update () {
 	//Jump
 	isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
 	if(isOnGround){
-		jumps=2;
+		jumps=jumpsF;
 	}
-	if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && jumps > 0)
+	if ((Input.GetKeyDown(KeyCode.Space)) && jumps > 0)
 	{
-		rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 	 	jumps--;
+		rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 		
 	}
 }
