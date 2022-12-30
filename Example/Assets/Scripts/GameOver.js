@@ -7,5 +7,5 @@ function Setup(){
 }
 
 function MainMenu(){
-SceneManager.LoadScene("Menu");
+	SceneManager.LoadScene("Menu");
 }
