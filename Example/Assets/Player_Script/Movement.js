@@ -23,7 +23,18 @@ var stepWait : float = .5f;
 @SerializeField
 var jumpForceF : float = 40;
 
+var livesText:UnityEngine.UI.Text;
+var healthBar:UnityEngine.UI.Image;
+
+var maxDamage:float = 300;
+var currentDamage:float;
+var kockback:float;
+var lives:int=3;
+
 function Start () {
+	currentDamage=maxDamage;
+	healthBar = GetComponent(UnityEngine.UI.Image);
+    livesText = GetComponent(UnityEngine.UI.Text);
 	leftLegRB = leftLeg.GetComponent(Rigidbody2D);
 	rightLegRB = rightLeg.GetComponent(Rigidbody2D);
 }
@@ -78,7 +89,10 @@ function Update () {
 	}
 }
 function FixedUpdate () {
-
+	var lerpSpeed = 3f*Time.deltaTime;
+	healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount,currentDamage/maxDamage,lerpSpeed);
+	livesText.text = lives.ToString();
+	colorChanger();
     setJumpForce();
 
 }
@@ -89,7 +103,10 @@ function setJumpForce(){
         jumpForce = jumpForceF;
     }
 }
-
+function colorChanger(){
+	var hColor:Color = Color.Lerp(Color.red,Color.green,(currentDamage/maxDamage));
+	healthBar.color = hColor;
+	}
 
 function MoveRight(seconds) {
 	leftLegRB.AddForce(Vector2.right * (speed*1000) * Time.deltaTime);
@@ -103,4 +120,13 @@ function MoveLeft(seconds)
 	rightLegRB.AddForce(Vector2.left * (speed*1000) * Time.deltaTime);
 	return new WaitForSeconds(seconds);
 	leftLegRB.AddForce(Vector2.left * (speed*1000) * Time.deltaTime);
+}
+
+
+function TakeLives() {
+    if(lives>0){
+        lives-=1;
+    }else{
+        Debug.Log("dead");
+    }
 }

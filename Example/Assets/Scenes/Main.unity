@@ -2012,9 +2012,10 @@ GameObject:
   - component: {fileID: 767998186}
   - component: {fileID: 767998185}
   - component: {fileID: 767998184}
+  - component: {fileID: 767998187}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2034,7 +2035,10 @@ MonoBehaviour:
   rightLeg: {fileID: 1791935262}
   leftLegRB: {fileID: 1926713121}
   rightLegRB: {fileID: 1791935263}
+  lowerArmR: {fileID: 1444490410}
+  lowerArmL: {fileID: 1347291816}
   rb: {fileID: 1575853906}
+  jumpForce: 2500
   seconds: 0
   anim: {fileID: 767998185}
   isOnGround: 0
@@ -2046,7 +2050,13 @@ MonoBehaviour:
   jumps: 2
   speed: 2
   stepWait: 10
-  jumpForce: 2500
+  jumpForceF: 40
+  livesText: {fileID: 802963989}
+  healthBar: {fileID: 1372607279}
+  maxDamage: 300
+  currentDamage: 0
+  kockback: 0
+  lives: 3
 --- !u!95 &767998185
 Animator:
   serializedVersion: 3
@@ -2087,6 +2097,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &767998187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767998183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602d8b2820ae63441875daa7e18251df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &802342673
 GameObject:
   m_ObjectHideFlags: 0
