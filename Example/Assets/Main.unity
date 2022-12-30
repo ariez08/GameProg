@@ -1824,6 +1824,7 @@ MonoBehaviour:
   lowerArmR: {fileID: 227391118}
   lowerArmL: {fileID: 770979741}
   rb: {fileID: 348861927}
+  jumpForce: 50
   seconds: 0
   anim: {fileID: 1344884377}
   isOnGround: 0
@@ -1835,7 +1836,7 @@ MonoBehaviour:
   jumps: 2
   speed: 2
   stepWait: 10
-  jumpForce: 2500
+  jumpForceF: 40
 --- !u!95 &1344884377
 Animator:
   serializedVersion: 3

@@ -8,6 +8,7 @@ var lowerArmR : Rigidbody2D;
 var lowerArmL : Rigidbody2D;
 var rb : Rigidbody2D;
 
+var jumpForce : float;
 var seconds : float;
 var anim : Animator;
 var isOnGround : boolean;
@@ -20,8 +21,7 @@ var speed : float = 1.5f;
 @SerializeField
 var stepWait : float = .5f;
 @SerializeField
-var jumpForce : float = 40;
-
+var jumpForceF : float = 40;
 
 function Start () {
 	leftLegRB = leftLeg.GetComponent(Rigidbody2D);
@@ -33,7 +33,7 @@ function Update () {
 	{
 		if (Input.GetAxisRaw("Horizontal") > 0)
 		{
-			if (Input.GetKeyDown("s"))
+			if (Input.GetKeyDown(KeyCode.S))
 			{
 				lowerArmR.AddForce(transform.right * 1000);
 			}
@@ -42,7 +42,7 @@ function Update () {
 		}
 		else
 		{
-			if (Input.GetKeyDown("s"))
+			if (Input.GetKeyDown(KeyCode.S))
 			{
 				lowerArmL.AddForce(transform.right * -1000);
 			}
@@ -55,23 +55,25 @@ function Update () {
 		anim.Play("idle");
 	}
 
-	if (Input.GetKeyDown("q"))
+	//Ataack
+	if (Input.GetKeyDown(KeyCode.Q))
 	{
 		lowerArmL.AddForce(transform.right * -1000);
 	}
-	if (Input.GetKeyDown("e"))
+	if (Input.GetKeyDown(KeyCode.E))
 	{
 		lowerArmR.AddForce(transform.right * 1000);
 	}
 
+	//Jump
 	isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
 	if(isOnGround){
 		jumps=2;
 	}
-	if (Input.GetKeyDown(KeyCode.Space)&& jumps > 0)
+	if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && jumps > 0)
 	{
-	rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-	 jumps--;
+		rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+	 	jumps--;
 		
 	}
 }
@@ -82,9 +84,9 @@ function FixedUpdate () {
 }
 function setJumpForce(){
     if (jumps==1) {
-        jumpForce = 30;
-    }else if (jumps ==2) {
-        jumpForce = 40;
+        jumpForce = jumpForceF-10;
+    }else if (jumps==2) {
+        jumpForce = jumpForceF;
     }
 }
 
