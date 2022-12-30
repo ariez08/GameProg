@@ -5,6 +5,7 @@ var rightLeg : GameObject;
 var leftLegRB : Rigidbody2D;
 var rightLegRB : Rigidbody2D;
 var rb : Rigidbody2D;
+var lowerArmR : Rigidbody2D;
 
 var seconds : float;
 var anim : Animator;
@@ -31,12 +32,22 @@ function Update () {
 	{
 		if (Input.GetAxisRaw("Horizontal") > 0)
 		{
-			anim.Play("walk_right");
+			if (Input.GetKeyDown("f"))
+			{
+				lowerArmR.AddForce(transform.right * 1000f);
+			}
+			anim.SetBool("walkRight", true);
+			anim.SetBool("walkLeft", false);
 			MoveRight(stepWait);
 		}
 		else
 		{
-			anim.Play("walk_left");
+			if (Input.GetKeyDown("f"))
+			{
+				lowerArmR.AddForce(transform.right * -1000f);
+			}
+			anim.SetBool("walkRight", false);
+			anim.SetBool("walkLeft", true);
 			MoveLeft(stepWait);
 		}
 	}
@@ -44,6 +55,8 @@ function Update () {
 	{
 		anim.Play("idle");
 	}
+
+
 
 	isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
 	if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
