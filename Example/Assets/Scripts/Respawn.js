@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-var gameOver:GameOver;
+
 function Start () {
 	
 }
@@ -13,15 +13,12 @@ function Update () {
         // Player is outside the camera view, so respawn it at a random location
         if (gameObject.CompareTag("Player"))
         {
-        if( GetComponent(Player).lives>0){
+        if( GetComponent(Movement).lives>0){
 
 
         	transform.position = GetRandomPosition(new Vector2(-10, 8), new Vector2(10, 8));
-          	GetComponent(Player).TakeLives();
-        	}else{
-        		gameOver.Setup();
+          	GetComponent(Movement).TakeLives();
         	}
-          // The sprite has the "Enemy" tag
         }
       }
       
