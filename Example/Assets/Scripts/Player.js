@@ -33,9 +33,10 @@ var livesText:UnityEngine.UI.Text;
 var healthBar:UnityEngine.UI.Image;
 function Start () {
 	currentDamage=maxDamage;
-    isRight=true;
-    healthBar = GetComponent(UnityEngine.UI.Image);
+	healthBar = GetComponent(UnityEngine.UI.Image);
     livesText = GetComponent(UnityEngine.UI.Text);
+    isRight=true;
+
 	body = GetComponent(Rigidbody2D);
 	anim = GetComponent(Animator);
 }

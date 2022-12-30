@@ -12,13 +12,13 @@ var isOnGround : boolean;
 var positionRadius : float;
 var ground : LayerMask;
 var playerPos : Transform;
-
+var jumps = 2;
 @SerializeField
 var speed : float = 1.5f;
 @SerializeField
 var stepWait : float = .5f;
 @SerializeField
-var jumpForce : float = 10f;
+var jumpForce : float = 40;
 
 
 function Start () {
@@ -46,10 +46,27 @@ function Update () {
 	}
 
 	isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
-	if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
-	{
-		rb.AddForce(Vector2.up * jumpForce);
+	if(isOnGround){
+		jumps=2;
 	}
+	if (Input.GetKeyDown(KeyCode.Space)&& jumps > 0)
+	{
+	rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+	 jumps--;
+		
+	}
+}
+function FixedUpdate () {
+
+    setJumpForce();
+
+}
+function setJumpForce(){
+    if (jumps==1) {
+        jumpForce = 30;
+    }else if (jumps ==2) {
+        jumpForce = 40;
+    }
 }
 
 
