@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 14418699}
   - component: {fileID: 14418702}
   - component: {fileID: 14418703}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 89284731}
   - component: {fileID: 89284730}
   - component: {fileID: 89284729}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: LowerLegR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,34 +407,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
---- !u!1 &107161201
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 107161202}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &107161202
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 107161201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.4, y: 1.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &155392089
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +515,7 @@ GameObject:
   - component: {fileID: 227391115}
   - component: {fileID: 227391118}
   - component: {fileID: 227391119}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: LowerArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +656,7 @@ GameObject:
   - component: {fileID: 348861924}
   - component: {fileID: 348861927}
   - component: {fileID: 348861928}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +789,7 @@ GameObject:
   - component: {fileID: 358598299}
   - component: {fileID: 358598298}
   - component: {fileID: 358598297}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: LowerArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,10 +927,10 @@ GameObject:
   m_Component:
   - component: {fileID: 365648658}
   - component: {fileID: 365648661}
-  - component: {fileID: 365648662}
   - component: {fileID: 365648659}
   - component: {fileID: 365648660}
-  m_Layer: 10
+  - component: {fileID: 365648662}
+  m_Layer: 11
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,6 +989,7 @@ MonoBehaviour:
   rightLegRB: {fileID: 1141157508}
   body: {fileID: 976443874}
   lowerArmR: {fileID: 358598298}
+  lowerArmL: {fileID: 461020109}
   seconds: 0
   anim: {fileID: 365648662}
   isOnGround: 0
@@ -1025,9 +998,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   playerPos: {fileID: 1958864730}
+  jumps: 0
+  jumpForce: 40
   speed: 2
   stepWait: 0.5
-  jumpForce: 2500
+  jumpsF: 2
+  jumpForceF: 40
 --- !u!212 &365648661
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1098,7 +1074,7 @@ GameObject:
   - component: {fileID: 461020110}
   - component: {fileID: 461020109}
   - component: {fileID: 461020108}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: LowerArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1215,7 @@ GameObject:
   - component: {fileID: 532799819}
   - component: {fileID: 532799817}
   - component: {fileID: 532799818}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpperArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1372,7 @@ Transform:
   - {fileID: 1344884375}
   - {fileID: 365648658}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &747036944
 GameObject:
@@ -1406,7 +1382,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 747036945}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: PlayerToGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1438,7 +1414,7 @@ GameObject:
   - component: {fileID: 770979738}
   - component: {fileID: 770979741}
   - component: {fileID: 770979742}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: LowerArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1580,7 +1556,7 @@ GameObject:
   - component: {fileID: 878104613}
   - component: {fileID: 878104614}
   - component: {fileID: 878104615}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperLegR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1735,7 +1711,7 @@ GameObject:
   - component: {fileID: 889420175}
   - component: {fileID: 889420173}
   - component: {fileID: 889420174}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpperArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1973,7 +1949,7 @@ GameObject:
   - component: {fileID: 940732881}
   - component: {fileID: 940732882}
   - component: {fileID: 940732883}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: LowerLegL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2128,7 +2104,7 @@ GameObject:
   - component: {fileID: 976443876}
   - component: {fileID: 976443874}
   - component: {fileID: 976443875}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2261,7 +2237,7 @@ GameObject:
   - component: {fileID: 1048399692}
   - component: {fileID: 1048399695}
   - component: {fileID: 1048399696}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2403,7 +2379,7 @@ GameObject:
   - component: {fileID: 1065132722}
   - component: {fileID: 1065132723}
   - component: {fileID: 1065132724}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2549,7 +2525,7 @@ GameObject:
   - component: {fileID: 1141157508}
   - component: {fileID: 1141157510}
   - component: {fileID: 1141157509}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpperLegR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2889,8 +2865,8 @@ GameObject:
   - component: {fileID: 1344884378}
   - component: {fileID: 1344884376}
   - component: {fileID: 1344884379}
-  m_Layer: 9
-  m_Name: Player
+  m_Layer: 10
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2934,19 +2910,22 @@ MonoBehaviour:
   rightLeg: {fileID: 878104609}
   leftLegRB: {fileID: 1479995802}
   rightLegRB: {fileID: 878104613}
-  rb: {fileID: 348861927}
   lowerArmR: {fileID: 227391118}
-  seconds: 0
+  lowerArmL: {fileID: 770979741}
+  rb: {fileID: 348861927}
+  jumpForce: 40
+  jumps: 0
   anim: {fileID: 1344884377}
   isOnGround: 0
-  positionRadius: 0.3
   ground:
     serializedVersion: 2
     m_Bits: 256
+  positionRadius: 0.3
   playerPos: {fileID: 747036945}
   speed: 2
   stepWait: 0.5
-  jumpForce: 2500
+  jumpsF: 2
+  jumpForceF: 40
 --- !u!95 &1344884377
 Animator:
   serializedVersion: 3
@@ -3032,7 +3011,7 @@ GameObject:
   - component: {fileID: 1479995802}
   - component: {fileID: 1479995803}
   - component: {fileID: 1479995804}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: UpperLegL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3188,7 +3167,7 @@ GameObject:
   - component: {fileID: 1512058712}
   - component: {fileID: 1512058711}
   - component: {fileID: 1512058710}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3334,7 +3313,7 @@ GameObject:
   - component: {fileID: 1610996865}
   - component: {fileID: 1610996866}
   - component: {fileID: 1610996867}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: LowerLegR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3586,7 +3565,7 @@ GameObject:
   - component: {fileID: 1644796889}
   - component: {fileID: 1644796888}
   - component: {fileID: 1644796887}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: LowerLegL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3737,7 +3716,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1958864730}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: PlayerToGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3770,7 +3749,7 @@ GameObject:
   - component: {fileID: 1959661116}
   - component: {fileID: 1959661118}
   - component: {fileID: 1959661117}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpperLegL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
