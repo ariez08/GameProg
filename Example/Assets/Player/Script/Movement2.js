@@ -25,23 +25,36 @@ function Start () {
 }
 
 function Update () {
-	speed = 0;
-	if (Input.GetKey("l"))
+	
+	if (Input.GetKeyDown("l"))
 	{
-		speed=10;
+		
 		anim.SetBool("walkRight", true);
 		anim.SetBool("walkLeft", false);
 		MoveRight(stepWait);
 	}
-
-	if (Input.GetKey("j"))
+	if (Input.GetKeyUp("l"))
 	{
-		speed=10;
+		
+		anim.SetBool("walkRight", false);
+		anim.SetBool("walkLeft", false);
+
+	}
+
+	if (Input.GetKeyDown("j"))
+	{
+
 		anim.SetBool("walkRight", false);
 		anim.SetBool("walkLeft", true);
 		MoveLeft(stepWait);
 	}
+	if (Input.GetKeyUp("j"))
+	{
+		
+		anim.SetBool("walkRight", false);
+		anim.SetBool("walkLeft", false);
 
+	}
 
 	//Jump
 	isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);

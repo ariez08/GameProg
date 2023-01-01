@@ -46,6 +46,7 @@ function Update () {
 			{
 				lowerArmR.AddForce(transform.right * -1000f);
 			}
+
 			anim.SetBool("walkRight", false);
 			anim.SetBool("walkLeft", true);
 			MoveLeft(stepWait);
