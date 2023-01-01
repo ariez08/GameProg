@@ -955,9 +955,9 @@ GameObject:
   m_Component:
   - component: {fileID: 365648658}
   - component: {fileID: 365648661}
+  - component: {fileID: 365648662}
   - component: {fileID: 365648659}
   - component: {fileID: 365648660}
-  - component: {fileID: 365648662}
   m_Layer: 10
   m_Name: Player2
   m_TagString: Untagged
@@ -996,11 +996,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 365648657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75302f2cf3f2664c8183f96c3ccdd74, type: 3}
+  m_Script: {fileID: 11500000, guid: c31b159016bd3b3429ba91767791115c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 725741185}
-  spawnPoint: {x: 0, y: 0}
+  spawnPoint: {x: 2.5, y: -3}
   instance: {fileID: 365648657}
 --- !u!114 &365648660
 MonoBehaviour:
@@ -1025,10 +1025,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   playerPos: {fileID: 1958864730}
-  stats: 0
-  speed: 1.5
+  speed: 2
   stepWait: 0.5
-  jumpForce: 10
+  jumpForce: 2500
 --- !u!212 &365648661
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2946,7 +2945,7 @@ MonoBehaviour:
     m_Bits: 256
   playerPos: {fileID: 747036945}
   speed: 2
-  stepWait: 10
+  stepWait: 0.5
   jumpForce: 2500
 --- !u!95 &1344884377
 Animator:
@@ -3018,7 +3017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 725741185}
-  spawnPoint: {x: 0, y: 0}
+  spawnPoint: {x: -4, y: -3}
   instance: {fileID: 1344884374}
 --- !u!1 &1479995798
 GameObject:

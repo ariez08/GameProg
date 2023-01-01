@@ -11,13 +11,12 @@ var isOnGround : boolean;
 var positionRadius : float = 0.3;
 var ground : LayerMask;
 var playerPos : Transform;
-var stats = 0;
 @SerializeField
 var speed : float = 1.5f;
 @SerializeField
 var stepWait : float = .5f;
 @SerializeField
-var jumpForce : float = 10f;
+var jumpForce : float = 2500f;
 
 
 function Start () {
@@ -26,7 +25,7 @@ function Start () {
 
 function Update () {
 	
-	if (Input.GetKeyDown("l"))
+	if (Input.GetKey("l"))
 	{
 		
 		anim.SetBool("walkRight", true);
@@ -41,7 +40,7 @@ function Update () {
 
 	}
 
-	if (Input.GetKeyDown("j"))
+	if (Input.GetKey("j"))
 	{
 
 		anim.SetBool("walkRight", false);
@@ -58,13 +57,13 @@ function Update () {
 
 	//Jump
 	isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
-	if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
+	if (isOnGround == true && Input.GetKeyDown("i"))
 	{
-		body.AddForce(Vector2.up * jumpForce);
+		body.AddForce(transform.up * jumpForce);
 	}
 
 	//Attack
-	if (Input.GetKeyDown("p"))
+	if (Input.GetKeyDown("k"))
 	{
 		lowerArmR.AddForce(transform.right * -1000f);
 	}
