@@ -80,7 +80,7 @@ function Update () {
 
 	//Attack
 	isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
-	if (isOnGround == true && Input.GetKeyDown(KeyCode.U))
+	if ( Input.GetKeyDown(KeyCode.U))
 	{
 		lowerArmL.AddForce(transform.right * -1000);
 	}

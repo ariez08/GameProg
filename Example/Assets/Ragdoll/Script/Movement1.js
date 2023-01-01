@@ -66,7 +66,7 @@ function Update () {
 
 	//Attack
 	isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
-	if (isOnGround == true && Input.GetKeyDown(KeyCode.Q))
+	if ( Input.GetKeyDown(KeyCode.Q))
 	{
 		lowerArmL.AddForce(transform.right * -1000);
 	}
@@ -101,7 +101,7 @@ function setJumpForce(){
 
 
 function MoveRight(seconds) {
-	Debug.Log("Kanan");
+	//Debug.Log("Kanan");
 	leftLegRB.AddForce(Vector2.right * (speed*1000) * Time.deltaTime);
 	return new WaitForSeconds(seconds);
 	rightLegRB.AddForce(Vector2.right * (speed*1000) * Time.deltaTime);
@@ -110,7 +110,7 @@ function MoveRight(seconds) {
 
 function MoveLeft(seconds)
 {
-	Debug.Log("Kiri");
+	//Debug.Log("Kiri");
 	rightLegRB.AddForce(Vector2.left * (speed*1000) * Time.deltaTime);
 	return new WaitForSeconds(seconds);
 	leftLegRB.AddForce(Vector2.left * (speed*1000) * Time.deltaTime);

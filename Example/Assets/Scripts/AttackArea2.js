@@ -5,20 +5,20 @@ var hand : Rigidbody2D;
 var knockbackForce : float ;
 function Update() 
 {
-   if (Input.GetKeyDown(KeyCode.Q))
+   if (Input.GetKeyDown(KeyCode.U))
 	{
 		GetComponent(CircleCollider2D).enabled=!GetComponent(CircleCollider2D).enabled;
 	}
-	  if (Input.GetKeyUp(KeyCode.Q))
+	  if (Input.GetKeyUp(KeyCode.U))
 	{
 		GetComponent(CircleCollider2D).enabled=!GetComponent(CircleCollider2D).enabled;
 	}
-  if (Input.GetKeyDown(KeyCode.E))
+  if (Input.GetKeyDown(KeyCode.O))
 	{
 		GetComponent(CircleCollider2D).enabled=!GetComponent(CircleCollider2D).enabled;
 
 	}
-	  if (Input.GetKeyUp(KeyCode.E))
+	  if (Input.GetKeyUp(KeyCode.O))
 	{
 		GetComponent(CircleCollider2D).enabled=!GetComponent(CircleCollider2D).enabled;
 	}
@@ -30,12 +30,12 @@ function OnTriggerEnter2D(col : Collider2D)
 
 
 
-  if (col.gameObject.tag == "SecondPlayer"){
+  if (col.gameObject.tag == "Player"){
   Debug.Log("haha");
-     if (col.GetComponent.<Health2>() != null)
+     if (col.GetComponent.<Health>() != null)
 {
  
-     var health : Health2 = col.GetComponent.<Health2>();
+     var health : Health = col.GetComponent.<Health>();
     health.TakeDamage(40);
         knockbackForce = health.kockback;
          
