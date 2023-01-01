@@ -97,12 +97,6 @@ function setJumpForce(){
     }else if (jumps==2) {
         jumpForce = jumpForceF;
     }
-
-	//Test
-	if (Input.GetKeyDown("x"))
-	{
-		lowerArmR.AddForce(transform.right * -1000f);
-	}
 }
 
 
