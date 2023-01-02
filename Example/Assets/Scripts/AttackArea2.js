@@ -1,7 +1,6 @@
-﻿		#pragma strict
+﻿#pragma strict
 
-var hand : Rigidbody2D;
- var enemyRigidbody : Rigidbody2D;
+var enemyRigidbody : Rigidbody2D;
 var knockbackForce : float ;
 function Update() 
 {
@@ -27,23 +26,17 @@ function Update()
  
 function OnTriggerEnter2D(col : Collider2D) 
 {
-
-
-
-  if (col.gameObject.tag == "Player"){
-  Debug.Log("haha");
-     if (col.GetComponent.<Health>() != null)
-{
- 
-     var health : Health = col.GetComponent.<Health>();
-    health.TakeDamage(40);
-        knockbackForce = health.kockback;
-         
-        var knockbackDirection : Vector2 = transform.position - transform.position;
-        Debug.Log(knockbackDirection);
-        knockbackDirection.Normalize();
-        enemyRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-}
-  }
- 
+	if (col.gameObject.tag == "Player"){
+		Debug.Log("haha");
+    	if (col.GetComponent.<Health>() != null)
+		{
+			var health : Health = col.GetComponent.<Health>();
+    		health.TakeDamage(40);
+        	knockbackForce = health.knockback;
+         	var knockbackDirection : Vector2 = transform.position - transform.position;
+        	Debug.Log(knockbackDirection);
+        	knockbackDirection.Normalize();
+        	enemyRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+		}
+  	}
 }

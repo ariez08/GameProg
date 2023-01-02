@@ -19,7 +19,7 @@ function Respawn()
 	var playerPoint : Vector3 = Camera.main.WorldToScreenPoint(body.transform.position);
 	if (playerPoint.y< -20 || playerPoint.y > Screen.height+20)
 	{
-		var health : Health = head.GetComponent.<Health>();
+		var health : Health2 = head.GetComponent.<Health2>();
 		health.TakeLives();
 		health.currentDamage = health.maxDamage;
 		Debug.Log("Respawn");
