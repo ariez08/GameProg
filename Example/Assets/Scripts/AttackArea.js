@@ -1,6 +1,7 @@
 ﻿#pragma strict
 var enemyRigidbody : Rigidbody2D;
 var knockForce : float ;
+var otherRigidbody : Rigidbody2D;
 function Update() 
 {
    if (Input.GetKeyDown(KeyCode.Q))
@@ -28,13 +29,19 @@ function OnTriggerEnter2D(col : Collider2D)
   	if (col.gameObject.tag == "SecondPlayer")
   	{
 	  	Debug.Log("P2 Hit!");
+	  	otherRigidbody = col.gameObject.GetComponent(Rigidbody2D);
 	    if (col.GetComponent.<Health2>() != null)
 		{
 			var health : Health2 = col.GetComponent.<Health2>();
-	        var knockbackDirection : Vector2 = col.transform.position - col.transform.position;
+	        
 	    	health.TakeDamage(40);
 	        knockForce = health.knockback;
-	        Knockback(col.gameObject, knockForce);
+
+		}
+		if(otherRigidbody!= null){
+	
+		var oppositeDirection = new Vector2(-(Mathf.Sign(transform.position.x - otherRigidbody.transform.position.x)), 0);
+        	otherRigidbody.AddForce(oppositeDirection* knockForce, ForceMode2D.Impulse);
 		}
   	}
 }

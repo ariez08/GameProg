@@ -9,3 +9,7 @@ function Setup(){
 function MainMenu(){
 	SceneManager.LoadScene("Menu");
 }
+
+function Restart(){
+	SceneManager.LoadScene("Main");
+}

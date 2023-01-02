@@ -2,6 +2,7 @@
 
 var enemyRigidbody : Rigidbody2D;
 var knockbackForce : float ;
+var otherRigidbody : Rigidbody2D;
 function Update() 
 {
    if (Input.GetKeyDown(KeyCode.U))
@@ -22,21 +23,24 @@ function Update()
 		GetComponent(CircleCollider2D).enabled=!GetComponent(CircleCollider2D).enabled;
 	}
 }
-  //enemies.GetComponent(SecondPlayer).TakeDamage(20);
+ 
  
 function OnTriggerEnter2D(col : Collider2D) 
 {
 	if (col.gameObject.tag == "Player"){
-		Debug.Log("haha");
+	otherRigidbody = col.gameObject.GetComponent(Rigidbody2D);
+
     	if (col.GetComponent.<Health>() != null)
 		{
 			var health : Health = col.GetComponent.<Health>();
     		health.TakeDamage(40);
         	knockbackForce = health.knockback;
-         	var knockbackDirection : Vector2 = transform.position - transform.position;
-        	Debug.Log(knockbackDirection);
-        	knockbackDirection.Normalize();
-        	enemyRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+         	
+		}
+		if(otherRigidbody!= null){
+
+		var oppositeDirection = new Vector2(-(Mathf.Sign(transform.position.x - otherRigidbody.transform.position.x)), 0);
+        	otherRigidbody.AddForce(oppositeDirection* knockbackForce, ForceMode2D.Impulse);
 		}
   	}
 }
